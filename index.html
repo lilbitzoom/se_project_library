@@ -19,6 +19,7 @@
           />
           <ul class="nav__links">
             <li>
+              <!--WELL-DONE: Navigation works correctly-->
               <a href="#staff-picks" class="nav__link">Staff picks</a>
             </li>
             <li>
@@ -58,6 +59,7 @@
         <section class="staff" id="staff-picks">
           <h2 class="staff__title">Staff picks</h2>
           <p class="staff__subtitle">That our readers love</p>
+          <!--WELL-DONE: Class is named according to BEM-->
           <ul class="staff__cards">
             <li class="card">
               <div class="card__content">
@@ -174,6 +176,10 @@
                 class="person__image person__image_size_l"
               />
             </div>
+            <!--CAN BE IMPROVED: Note that you can use the figure and figcaption element here.
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figureNote that you can use the figure and figcaption element here.
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure
+          -->
             <div class="person person_name_burbidge">
               <p class="person__caption">Margaret Burbidge</p>
               <img
@@ -290,8 +296,15 @@
       </main>
       <footer class="footer" id="contacts">
         <section class="footer__columns">
-          <div class="footer__column footer__logo">
-            <img src="./images/logo_practicum.svg" alt="Practicum Logo" />
+          <!--NEEDS CORRECTING:
+            Class `footer__logo` should be assigned for the logo itself, not for its container.
+          -->
+          <div class="footer__column">
+            <img
+              class="footer__logo"
+              src="./images/logo_practicum.svg"
+              alt="Practicum Logo"
+            />
           </div>
           <div class="footer__column footer__column_content_hours">
             <h3 class="footer__column-heading">Hours</h3>
@@ -304,10 +317,11 @@
             <h3 class="footer__column-heading">Social media</h3>
             <ul class="footer__list">
               <li class="footer__list-item">
+                <!--NEEDS CORRECTING: A typo in the class name: class `f` should be removed.-->
                 <a
                   href="#"
                   title="Katelin's Facebook"
-                  class="f footer__column-link"
+                  class="footer__column-link"
                 >
                   <img
                     class="footer__social-icon"
@@ -339,3 +353,42 @@
     </div>
   </body>
 </html>
+
+<!--
+
+Hello Katelin!
+
+Thanks for sending your code. I have reviewed your work, and I'm very impressed, it looks just awesome, you did a really amazing job!
+
+What I especially liked about it:
+
+- Well-structured valid markup
+- Great BEM, no naming issues, modifiers are used correctly
+- Good usage of Flexbox
+- No errors in css validator
+- Semantic tags chosen, ul and nav are used where necessary
+- Links have hover effect
+- The page looks very similar to the design
+- Default margins of elements are reset
+
+There are some things to correct before moving on to the next project. I believe you'll handle them with ease:
+
+- All the comments marked in the code as "Needs correcting"
+
+I've also left some comments for improvement. They aren't necessary to follow, but it would be great if you do.
+
+Can be improved:
+
+- The image in `header` covers title and subtitle when resizing the viewport: http://joxi.ru/BA0xqPqH1vGNlA. It's necessary to change z-index in this section so that the texts always stay on top of the images.
+- When it comes to making an element fall behind other elements, you could take this aproach: give that element a negative z-index, and then give the positive z-index to the parent to create a stacking context. For example, in the `about` section, you need to give ```z-index: 1``` to the `about` block to create a stacking context, and then ```z-index: -1``` to the circle element. Basically, this is all z-index you need to get the wanted result.
+More about z-index and stacking context: https://www.freecodecamp.org/news/z-index-explained-how-to-stack-elements-using-css-7c5aa0f179b3/
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
+
+**A reminder:**
+
+The work will be accepted as soon as all the issues marked "Needs correcting" are fixed.
+"Improvement" issues are for you to decide if you want to implement them.
+
+Good luck!
+
+-->
